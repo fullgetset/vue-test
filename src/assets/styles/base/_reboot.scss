@@ -18,9 +18,15 @@ body {
 
 h1,
 h2,
-p {
+p,
+ul {
   margin-top: 0;
   margin-bottom: 0;
+}
+
+ul {
+  padding-inline-start: 0;
+  list-style-type: none;
 }
 
 button {

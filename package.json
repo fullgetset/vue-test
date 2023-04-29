@@ -10,7 +10,8 @@
   "dependencies": {
     "swiper": "^9.2.4",
     "vite-svg-loader": "^4.0.0",
-    "vue": "^3.2.47"
+    "vue": "^3.2.47",
+    "vuex": "^4.0.2"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.0.0",
