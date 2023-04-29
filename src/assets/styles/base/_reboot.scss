@@ -10,6 +10,13 @@ body {
   color: var(--palette-primary-text);
 }
 
+#app {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 *,
 *::after,
 *::before {

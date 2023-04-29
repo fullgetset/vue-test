@@ -1,0 +1,17 @@
+.header,
+.footer {
+  height: 55px;
+  background-color: var(--palette-background-header);
+  text-transform: uppercase;
+  font-size: 45px;
+  color: var(--palette-secondary-text);
+  text-align: center;
+}
+
+.header {
+  margin-block-end: 40px;
+}
+
+.footer {
+  margin-block-start: 40px;
+}

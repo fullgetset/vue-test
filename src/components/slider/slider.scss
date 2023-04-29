@@ -1,63 +1,84 @@
+@import "../../assets/styles/base/mixins";
+
 .slider {
   max-width: 1440px;
   margin-inline: auto;
   position: relative;
   background-color: var(--palette-background-main);
 
-  &__input {
-    display: none;
-
-    &:hover + li {
-      background-color: red;
-      color: var(--palette-secondary-text);
-    }
-  }
-
-  &__label {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-  }
-
-  &__link {
-    width: 100%;
-    height: 50%;
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    cursor: pointer;
+  &__slide:hover .slide__price-sum {
+    background-color: red;
+    color: var(--palette-secondary-text);
   }
 
   &__heading {
     display: flex;
     padding-block: 22px 28px;
     padding-inline: 18px 10px;
-    gap: 85px;
     align-items: center;
+
+    @include media-breakpoint-down(lg) {
+      align-items: center;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    @include media-breakpoint-between(lg, xl) {
+      flex-wrap: wrap;
+      column-gap: 122px;
+      row-gap: 25px;
+    }
+
+    @include media-breakpoint-up(xl) {
+      gap: 85px;
+    }
   }
 
   &__heading-title {
     color: var(--palette-primary-text);
-    font-size: 60px;
     font-weight: var(--typography-fontWeightBlack);
     line-height: 1;
-    letter-spacing: -5px;
+
+    @include media-breakpoint-down(md) {
+      font-size: 30px;
+    }
+
+    @include media-breakpoint-between(md, lg) {
+      font-size: 40px;
+    }
+
+    @include media-breakpoint-up(lg) {
+      font-size: 60px;
+      letter-spacing: -5px;
+    }
 
     &:not(:hover) {
       text-decoration: none;
     }
   }
 
+  &__icon-link {
+    @include media-breakpoint-down(lg) {
+      order: -1;
+    }
+  }
+
   &__heading-icon {
     transform: translateY(10px);
+    flex-shrink: 0;
   }
 
   &__heading-btns {
     display: flex;
-    margin-left: auto;
+
+    @include media-breakpoint-down(xl) {
+      width: 100%;
+      justify-content: space-between;
+    }
+
+    @include media-breakpoint-up(xl) {
+      margin-left: auto;
+    }
   }
 
   &__heading-next,
@@ -83,6 +104,14 @@
     transform: rotate(45deg);
   }
 
+  &__heading-link {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+  }
+
   &__background-image {
     position: absolute;
     bottom: 0px;
@@ -91,74 +120,5 @@
     transition: transform 0.3s;
     background-image: url(/src/components/icons/download.svg);
     background-repeat: repeat;
-  }
-}
-
-.slider-item {
-  &__heading {
-    position: relative;
-    padding-block: 15px 23px;
-    padding-inline-start: 38px;
-    height: 150px;
-  }
-
-  &__heading-img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
-  }
-
-  &__heading-name,
-  &__heading-info {
-    color: var(--palette-secondary-text);
-    line-height: 1.2;
-  }
-
-  &__heading-name {
-    font-size: 21px;
-    font-weight: var(--typography-fontWeightBold);
-  }
-
-  &__heading-info {
-    font-size: 15px;
-    margin-block-start: 8px;
-  }
-
-  &__footer {
-    padding-block: 12px 23px;
-    padding-inline-start: 23px;
-    display: grid;
-    row-gap: 7px;
-  }
-
-  &__footer-text {
-    font-size: 17px;
-    line-height: 1.5;
-    max-width: 301px;
-  }
-
-  &__footer-price {
-    font-size: 11px;
-    line-height: 1.5;
-    padding: 2px;
-    background-color: #c3b8a5;
-    border-radius: 2px;
-  }
-
-  &__price-sum {
-    font-weight: var(--typography-fontWeightBlack);
-    font-size: 24px;
-    line-height: 1.2;
-    border-radius: 2px;
-    margin-block-start: 5px;
-    width: max-content;
-    transition-property: background-color, color;
-    transition-duration: 0.4s;
-    padding: 3px 8px;
-    transform: translateX(-8px);
   }
 }
