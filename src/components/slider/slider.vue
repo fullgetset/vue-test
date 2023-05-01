@@ -21,6 +21,7 @@
         1220: { slidesPerView: 4 },
       }"
       :space-between="0"
+      :simulate-touch="false"
       :navigation="{
         nextEl: '.slider__heading-next',
         prevEl: '.slider__heading-prev',
